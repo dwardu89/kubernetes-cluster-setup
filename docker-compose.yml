@@ -3,7 +3,7 @@ services:
   terraform:
     build:
       context: ./docker
-      dockerfile: Dockerfile-terraform
+      dockerfile: docker/Dockerfile
     volumes:
       - ./helm:/project/helm
       - ./bin:/project/bin
