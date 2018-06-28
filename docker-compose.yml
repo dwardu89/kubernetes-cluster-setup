@@ -1,0 +1,13 @@
+version: '3'
+services:
+  terraform:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-terraform
+    volumes:
+      - ./helm:/project/helm
+      - ./bin:/project/bin
+      - ~/.kube:/root/.kube
+      - ./bin/.bashrc:/root/.bashrc
+    entrypoint:
+      /bin/bash
