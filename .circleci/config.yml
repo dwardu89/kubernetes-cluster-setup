@@ -42,5 +42,5 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
               docker tag app "${CIRCLE_BUILD_NUM}:${CIRCLE_SHA1}"
-              docker push "${CIRCLE_BUILD_NUM}:${CIRCLE_SHA1}"
+              docker push dwardu/kops:${CIRCLE_SHA1}
             fi
